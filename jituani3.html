@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>#実用性ありそうなアニメーション3</title>
+    <link rel="stylesheet" href="./css/jituani3.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="dot">
+        <span class="line-1"></span>
+        <span class="line-2"></span>
+        <div class="dot-wrapper">
+          <span class="dot-1"></span>
+          <span class="dot-2"></span>
+          <span class="dot-3"></span>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const selector = document.querySelector('.dot');
+      selector.addEventListener('click', e =>{
+        const target = selector.classList
+        if(target.contains('clicked')||target.contains('nonclicked')){
+          target.toggle('nonclicked');
+        }
+        target.toggle('clicked');
+      });
+    </script>
+  </body>
+</html>
