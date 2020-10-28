@@ -1,0 +1,261 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+$bgColor: #0e0e2e;
+$mainColor: #ff00ae;
+.wrapper{
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: $bgColor;
+}
+.ham{
+  width: 30em;
+  height: 30em;
+  border: 1em solid $mainColor;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::after{
+    content:'';
+    display: block;
+    width: 28em;
+    height: 28em;
+    border: 1em solid $bgColor;
+  }
+}
+
+.line-1,.line-2,.line-3{
+  position: absolute;
+  width: 20em;
+  height: 1em;
+  background: $mainColor;
+}
+.line-1{
+  top: 8em;
+  left: 5em;
+}
+.line-2{
+  top: 14.5em;
+  left: 5em;
+}
+.line-3{
+  top: 21.5em;
+  left: 5em;
+}
+.clicked{
+  animation: {
+    name: bg;
+    duration: .5s;
+    timing-function: linear;
+    fill-mode: forwards;
+  }
+  .line-1{
+    animation: {
+      name: line1,linebg;
+      duration: .5s;
+      timing-function: linear;
+      fill-mode: forwards;
+    }
+  }
+  .line-2{
+    animation: {
+      name: line2,linebg;
+      duration: .5s;
+      timing-function: linear;
+      fill-mode: forwards;
+    }
+  }
+  .line-3{
+    animation: {
+      name: line3,linebg;
+      duration: .5s;
+      timing-function: linear;
+      fill-mode: forwards;
+    }
+  }
+}
+.nonclicked{
+  animation: {
+    name: bgoff;
+    duration: .5s;
+    timing-function: linear;
+    fill-mode: forwards;
+  }
+  .line-1{
+    animation: {
+      name: line1off,linebgoff;
+      duration: .5s;
+      timing-function: linear;
+      fill-mode: forwards;
+    }
+  }
+  .line-2{
+    animation: {
+      name: line2off,linebgoff;
+      duration: .5s;
+      timing-function: linear;
+      fill-mode: forwards;
+    }
+  }
+  .line-3{
+    animation: {
+      name: line3off,linebgoff;
+      duration: .5s;
+      timing-function: linear;
+      fill-mode: forwards;
+    }
+  }
+}
+@keyframes linebg {
+  0%{
+    background: $mainColor;
+  }
+  20%{
+    background: $bgColor;
+  }
+  100%{
+    background: $bgColor;
+  }
+}
+@keyframes linebgoff {
+  0%{
+    background: $bgColor;
+  }
+  80%{
+    background: $bgColor;
+  }
+  100%{
+    background: $mainColor;
+  }
+}
+@keyframes bg {
+  0%{
+    background: $bgColor;
+  }
+  20%{
+    background: $mainColor;
+  }
+  100%{
+    background: $mainColor;
+  }
+}
+@keyframes bgoff {
+  0%{
+    background: $mainColor;
+  }
+  80%{
+    background: $mainColor;
+  }
+  100%{
+    background: $bgColor;
+  }
+}
+
+@keyframes line1 {
+  0%{
+    top: 8em;
+  }
+  20%{
+    top: 14.5em;
+  }
+  40%{
+    top: 14.5em;
+    transform: rotate(0deg);
+  }
+  70%{
+    top: 14.5em;
+    transform: rotate(-45deg);
+  }
+  100%{
+    top: 14.5em;
+    transform: rotate(-45deg);
+  }
+}
+@keyframes line1off {
+  0%{
+    top: 14.5em;
+    transform: rotate(-45deg);
+  }
+  60%{
+    top: 14.5em;
+    transform: rotate(-180deg);
+  }
+  80%{
+    top: 14.5em;
+    transform: rotate(-180deg);
+  }
+  100%{
+    top: 8em;
+    transform: rotate(-180deg);
+  }
+}
+@keyframes line2 {
+  40%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(-135deg);
+  }
+}
+@keyframes line2off {
+  0%{
+    transform: rotate(-135deg);
+  }
+  40%{
+    transform: rotate(-135deg);
+  }
+  60%{
+    transform: rotate(-180deg);
+  }
+  80%{
+    top: 14.5em;
+    transform: rotate(-180deg);
+  }
+  100%{
+    transform: rotate(-180deg);
+  }
+}
+@keyframes line3 {
+  0%{
+    top: 21.5em;
+  }
+  20%{
+    top: 14.5em;
+  }
+  40%{
+    top: 14.5em;
+    transform: rotate(0deg);
+  }
+  100%{
+    top: 14.5em;
+    transform: rotate(-135deg);
+  }
+}
+@keyframes line3off {
+  0%{
+    top: 14.5em;
+    transform: rotate(-135deg);
+  }
+  40%{
+    top: 14.5em;
+    transform: rotate(-135deg);
+  }
+  60%{
+    top: 14.5em;
+    transform: rotate(-180deg);
+  }
+  80%{
+    top: 14.5em;
+    transform: rotate(-180deg);
+  }
+  100%{
+    top: 21.5em;
+    transform: rotate(-180deg);
+  }
+}
