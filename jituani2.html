@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>#実用性ありそうなアニメーション2</title>
+    <link rel="stylesheet" href="./css/jituani2.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="ham">
+        <div class="line-wrapper">
+          <span class="line-1"></span>
+          <span class="line-2"></span>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const selector = document.querySelector('.ham');
+      selector.addEventListener('click', e =>{
+        const target = selector.classList
+        if(target.contains('clicked')||target.contains('nonclicked')){
+          target.toggle('nonclicked');
+        }
+        target.toggle('clicked');
+      });
+    </script>
+  </body>
+</html>
